@@ -135,13 +135,13 @@
         }
 
         h1 {
-            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            font-size: clamp(2.3rem, 6vw, 3.7rem);
             color: #4CAF50;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
             line-height: 1.2;
             opacity: 0;
-            animation: titleAppear 5s ease forwards;
+            animation: titleAppear 3s ease forwards;
         }
 
         .subheader {
@@ -218,33 +218,6 @@
             0% { transform: translate(0, 0) rotate(0deg); }
             50% { transform: translate(10px, 15px) rotate(5deg); }
             100% { transform: translate(0, 0) rotate(0deg); }
-        }
-
-        @media (prefers-color-scheme: light) {
-            body {
-                background: linear-gradient(135deg, #f5fff5, #e8f5e9);
-            }
-            
-            .container {
-                background: rgba(255, 255, 255, 0.95);
-            }
-            
-            .main-message {
-                background: #f8fff8;
-                color: #444;
-            }
-            
-            .subheader {
-                color: #666;
-            }
-
-            .touch {
-                color: #444;
-            }
-            
-            footer {
-                color: #999;
-            }
         }
 
         @media (max-height: 500px) {
