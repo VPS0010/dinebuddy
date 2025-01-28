@@ -13,25 +13,25 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
         body {
             background: linear-gradient(135deg, #f5fff5, #e8f5e9);
-            min-height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: clamp(10px, 3vw, 20px);
-            position: relative;
-            overflow-x: hidden;
+            padding: max(2vh, 10px);
         }
 
         .decorative-circle {
-            position: absolute;
+            position: fixed;
             background: rgba(76, 175, 80, 0.1);
             border-radius: 50%;
             z-index: -1;
-            transition: all 0.6s ease-in-out;
         }
 
         .circle-1 { 
@@ -58,41 +58,99 @@
             animation: float 7s infinite ease-in-out;
         }
 
-        @keyframes float {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(10px, 15px) rotate(5deg); }
-            100% { transform: translate(0, 0) rotate(0deg); }
+        /* New circles */
+        .circle-4 {
+            width: min(180px, 28vw);
+            height: min(180px, 28vw);
+            bottom: 20%;
+            left: -30px;
+            animation: float 9s infinite ease-in-out 1s;
+        }
+
+        .circle-5 {
+            width: min(120px, 20vw);
+            height: min(120px, 20vw);
+            top: -30px;
+            right: 15%;
+            animation: float 7s infinite ease-in-out 0.5s;
+        }
+
+        .circle-6 {
+            width: min(160px, 25vw);
+            height: min(160px, 25vw);
+            top: 60%;
+            right: 25%;
+            animation: float 8s infinite ease-in-out 1.5s;
+        }
+
+        .circle-7 {
+            width: min(140px, 22vw);
+            height: min(140px, 22vw);
+            bottom: -40px;
+            left: 30%;
+            animation: float 10s infinite ease-in-out 2s;
+        }
+
+        .circle-8 {
+            width: min(90px, 15vw);
+            height: min(90px, 15vw);
+            top: 40%;
+            left: 20%;
+            animation: float 6s infinite ease-in-out 1s;
+            background: rgba(76, 175, 80, 0.08);
+        }
+
+        .circle-9 {
+            width: min(110px, 18vw);
+            height: min(110px, 18vw);
+            top: 15%;
+            left: 40%;
+            animation: float 9s infinite ease-in-out 0.8s;
+            background: rgba(76, 175, 80, 0.06);
         }
 
         .container {
             width: min(800px, 95%);
-            margin: 0 auto;
-            position: relative;
-            padding: clamp(20px, 5vw, 40px);
+            max-height: 95vh;
+            padding: clamp(15px, 3vh, 30px);
             background: rgba(255, 255, 255, 0.95);
             border-radius: clamp(10px, 3vw, 20px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+            position: relative;
+            z-index: 1;
+        }
+
+      @keyframes titleAppear {
+            0% {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h1 {
-            font-size: clamp(2rem, 8vw, 4rem);
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
             color: #4CAF50;
-            margin-bottom: clamp(0.5rem, 2vw, 1rem);
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            animation: fadeInUp 3s ease;
+            line-height: 1.2;
+            opacity: 0;
+            animation: titleAppear 3s ease forwards;
         }
 
         .subheader {
-            font-size: clamp(1rem, 3vw, 1.4rem);
+            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
             color: #666;
-            margin-bottom: clamp(1rem, 4vw, 2rem);
             font-weight: 400;
             position: relative;
             display: inline-block;
-            transition: all 0.3s ease;
         }
 
         .subheader::after {
@@ -101,36 +159,42 @@
             width: clamp(40px, 10vw, 60px);
             height: 3px;
             background: #4CAF50;
-            margin: 10px auto;
+            margin: 8px auto;
             border-radius: 2px;
-            transition: all 0.3s ease;
         }
 
         .main-message {
-            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
             color: #444;
-            margin-bottom: clamp(1.5rem, 5vw, 3rem);
-            line-height: 1.6;
-            position: relative;
-            padding: clamp(10px, 3vw, 20px);
+            line-height: 1.4;
             background: #f8fff8;
             border-radius: 10px;
-            animation: pulse 2s infinite;
-            transition: all 0.3s ease;
+            padding: clamp(8px, 2vh, 15px);
+        }
+
+        .countdown {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            color: #4CAF50;
+            font-weight: 600;
         }
 
         .email-section {
-            margin: clamp(1.5rem, 5vw, 3rem) 0;
-            transition: all 0.3s ease;
+            margin: 1vh 0;
+        }
+
+        .touch {
+            color: #444;
+            font-size: clamp(0.8rem, 2vw, 1rem);
+            margin-bottom: 1vh;
         }
 
         .email-link {
             display: inline-block;
             text-decoration: none;
             color: #4CAF50;
-            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
             font-weight: 600;
-            padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px);
+            padding: clamp(8px, 1.5vh, 12px) clamp(15px, 3vw, 25px);
             border: 2px solid #4CAF50;
             border-radius: 30px;
             transition: all 0.3s ease;
@@ -146,63 +210,17 @@
         }
 
         footer {
-            margin-top: clamp(1rem, 3vw, 2rem);
             color: #999;
-            font-size: clamp(0.8rem, 2vw, 0.9rem);
-            animation: fadeInUp 1s ease 0.2s backwards;
+            font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+            margin-top: auto;
         }
 
-        .touch{
-            color:#444
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(10px, 15px) rotate(5deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
         }
 
-        .countdown {
-            font-size: clamp(1.2rem, 3.5vw, 1.8rem);
-            color: #4CAF50;
-            margin: clamp(10px, 3vw, 20px) 0;
-            font-weight: 600;
-            transition: all 0.1s ease;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-            100% { transform: scale(1); }
-        }
-
-        /* Additional media queries for extreme screen sizes */
-        @media (max-width: 350px) {
-            .container {
-                padding: 15px;
-            }
-            
-            .email-link {
-                padding: 8px 16px;
-            }
-        }
-
-        @media (min-width: 2000px) {
-            .container {
-                max-width: 1000px;
-            }
-            
-            body {
-                font-size: 18px;
-            }
-        }
-
-        /* Dark mode support */
         @media (prefers-color-scheme: dark) {
             body {
                 background: linear-gradient(135deg, #1a231a, #1e2f1f);
@@ -220,9 +238,32 @@
             .subheader {
                 color: #b0b0b0;
             }
+
+            .touch {
+                color: #b0b0b0;
+            }
             
             footer {
                 color: #808080;
+            }
+        }
+
+        @media (max-height: 500px) {
+            .container {
+                padding: 10px;
+                gap: 1vh;
+            }
+
+            .subheader::after {
+                margin: 4px auto;
+            }
+
+            .main-message {
+                padding: 6px;
+            }
+
+            .email-section {
+                margin: 0.5vh 0;
             }
         }
     </style>
@@ -231,6 +272,12 @@
     <div class="decorative-circle circle-1"></div>
     <div class="decorative-circle circle-2"></div>
     <div class="decorative-circle circle-3"></div>
+    <div class="decorative-circle circle-4"></div>
+    <div class="decorative-circle circle-5"></div>
+    <div class="decorative-circle circle-6"></div>
+    <div class="decorative-circle circle-7"></div>
+    <div class="decorative-circle circle-8"></div>
+    <div class="decorative-circle circle-9"></div>
 
     <div class="container">
         <header>
@@ -247,7 +294,6 @@
 
             <div class="email-section">
                 <p class="touch">Get in touch with us:</p>
-                <br>
                 <a href="mailto:hellodinebuddy@gmail.com" class="email-link">
                     📧 hellodinebuddy@gmail.com
                 </a>
