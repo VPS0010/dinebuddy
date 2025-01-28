@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DineBuddy - Culinary Revolution Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5fff5, #e8f5e9);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .decorative-circle {
+            position: absolute;
+            background: rgba(76, 175, 80, 0.1);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .circle-1 { width: 300px; height: 300px; top: -50px; left: -50px; }
+        .circle-2 { width: 200px; height: 200px; bottom: -80px; right: -30px; }
+        .circle-3 { width: 150px; height: 150px; top: 30%; right: -50px; }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: fadeInUp 1s ease;
+        }
+
+        .subheader {
+            font-size: 1.4rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            position: relative;
+            display: inline-block;
+        }
+
+        .subheader::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #4CAF50;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .main-message {
+            font-size: 1.4rem;
+            color: #444;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            position: relative;
+            padding: 20px;
+            background: #f8fff8;
+            border-radius: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        .email-section {
+            margin: 3rem 0;
+        }
+
+        .email-link {
+            display: inline-block;
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 1.4rem;
+            font-weight: 600;
+            padding: 15px 30px;
+            border: 2px solid #4CAF50;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            background: rgba(76, 175, 80, 0.1);
+        }
+
+        .email-link:hover {
+            background: #4CAF50;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        footer {
+            margin-top: 2rem;
+            color: #999;
+            font-size: 0.9rem;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .countdown {
+            font-size: 1.8rem;
+            color: #4CAF50;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            .subheader { font-size: 1.1rem; }
+            .main-message { font-size: 1.1rem; }
+            .email-link { font-size: 1.2rem; }
+            .container { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="decorative-circle circle-1"></div>
+    <div class="decorative-circle circle-2"></div>
+    <div class="decorative-circle circle-3"></div>
+
+    <div class="container">
+        <header>
+            <h1>DineBuddy</h1>
+            <p class="subheader">We're cooking up something extraordinary!</p>
+        </header>
+
+        <main>
+            <div class="main-message">
+              🏗️🚧The website is under development and will be live soon. Stay tuned🚀!
+            </div>
+
+            <div class="countdown">⌛ Launching in Q1 2025</div>
+
+            <div class="email-section">
+                <p>Get in touch with us:</p>
+                <a href="mailto:hellodinebuddy@gmail.com" class="email-link">
+                    📧 hellodinebuddy@gmail.com
+                </a>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2025 DineBuddy. Crafted with ❤️ and 🍳</p>
+        </footer>
+    </div>
+</body>
+</html>
