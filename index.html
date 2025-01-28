@@ -19,7 +19,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #f5fff5, #e8f5e9);
+            background: linear-gradient(135deg, #1a231a, #1e2f1f);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -58,7 +58,6 @@
             animation: float 7s infinite ease-in-out;
         }
 
-        /* New circles */
         .circle-4 {
             width: min(180px, 28vw);
             height: min(180px, 28vw);
@@ -113,7 +112,7 @@
             width: min(800px, 95%);
             max-height: 95vh;
             padding: clamp(15px, 3vh, 30px);
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(30, 30, 30, 0.95);
             border-radius: clamp(10px, 3vw, 20px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             backdrop-filter: blur(10px);
@@ -124,7 +123,7 @@
             z-index: 1;
         }
 
-      @keyframes titleAppear {
+        @keyframes titleAppear {
             0% {
                 opacity: 0;
                 transform: translateY(6px);
@@ -142,12 +141,12 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
             line-height: 1.2;
             opacity: 0;
-            animation: titleAppear 3s ease forwards;
+            animation: titleAppear 5s ease forwards;
         }
 
         .subheader {
             font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-            color: #666;
+            color: #b0b0b0;
             font-weight: 400;
             position: relative;
             display: inline-block;
@@ -165,9 +164,9 @@
 
         .main-message {
             font-size: clamp(0.9rem, 2vw, 1.2rem);
-            color: #444;
+            color: #e0e0e0;
             line-height: 1.4;
-            background: #f8fff8;
+            background: #2a332a;
             border-radius: 10px;
             padding: clamp(8px, 2vh, 15px);
         }
@@ -183,7 +182,7 @@
         }
 
         .touch {
-            color: #444;
+            color: #b0b0b0;
             font-size: clamp(0.8rem, 2vw, 1rem);
             margin-bottom: 1vh;
         }
@@ -210,7 +209,7 @@
         }
 
         footer {
-            color: #999;
+            color: #808080;
             font-size: clamp(0.7rem, 1.5vw, 0.9rem);
             margin-top: auto;
         }
@@ -221,30 +220,30 @@
             100% { transform: translate(0, 0) rotate(0deg); }
         }
 
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: light) {
             body {
-                background: linear-gradient(135deg, #1a231a, #1e2f1f);
+                background: linear-gradient(135deg, #f5fff5, #e8f5e9);
             }
             
             .container {
-                background: rgba(30, 30, 30, 0.95);
+                background: rgba(255, 255, 255, 0.95);
             }
             
             .main-message {
-                background: #2a332a;
-                color: #e0e0e0;
+                background: #f8fff8;
+                color: #444;
             }
             
             .subheader {
-                color: #b0b0b0;
+                color: #666;
             }
 
             .touch {
-                color: #b0b0b0;
+                color: #444;
             }
             
             footer {
-                color: #808080;
+                color: #999;
             }
         }
 
